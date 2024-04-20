@@ -1,0 +1,17 @@
+1.right the necessary code in Dockerfile
+2. update the .dockerignore file
+3. run following command in terminal
+    -docker build --tag python-django .
+
+    -docker run --publish 8000:8000 python-django
+    or
+    docker run --memory 1GB --publish 8000:8000  python-django 
+
+
+
+
+
+
+    ------------------------docker compose command -------------------------
+    -docker-compose build
+    -docker-compose up 
