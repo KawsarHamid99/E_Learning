@@ -34,7 +34,9 @@ def enrollments(request):
     serializer = EnrollmentSerializer(data=request.data)
     if serializer.is_valid():
         student_name = serializer.validated_data.get('student_name')
-        course_id = serializer.validated_data.get('course_id')
+        course_id = serializer.validated_data.get('course')
+        course_id=course_id.id
+        print(course_id)
         valid, message = EnrollmentService.validate_enrollment(student_name, course_id)
         if valid:
             enrollment = EnrollmentService.enroll_student(student_name, course_id)
